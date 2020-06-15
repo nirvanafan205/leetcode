@@ -1,27 +1,32 @@
-//two sums
 /*Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-  You may assume that each input would have exactly one solution, and you may not use the same element twice.
+ *You may assume that each input would have exactly one solution, and you may not use the same element twice.
 */
 
 public class two_sum
 {
-	public static void main(String[] args)
+	public int[] array (int[] nums, int target)
 	{
-		int target = 9;
-
-		int array[] = { 2, 15 , 11, 7 };
-
-		for(int i = 0; i < array.length; i++)
+		for(int i = 0; i < nums.length; i++)
 		{
-			for(int j = 0; j < array.length; j++)
+			for(int j = i + 1; j < nums.length; j++)
 			{
-				if(array[i] + array[j] == target)
+				if(nums[i] + nums[j] == target)
 				{
-					System.out.println(i + "," + j);
-
-					System.exit(0);
+					return new int[] {i,j};
 				}
 			}
 		}
+
+		throw new IllegalArgumentException("no match");
+	}
+
+	public static void main(String[] args)
+	{
+		int[] numbers = { 1, 2, 3 };
+		int target = 3;
+
+		two_sum caller = new two_sum();
+
+		caller.array(numbers,target);
 	}
 }
