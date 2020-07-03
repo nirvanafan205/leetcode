@@ -14,8 +14,6 @@ public class shuffle
 			xArray[i] = nums[i];
 		}
 
-		int end = nums.length - n;
-
 		for(int j = 0, b = 0; j < nums.length; j++)
 		{
 			if(j >= n)
