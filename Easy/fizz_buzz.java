@@ -35,14 +35,11 @@ public class fizz_buzz
 				array.add(str);
 			}
 
-
-
 			else
 			{
 				String str = Integer.toString(i);	
 				array.add(str);
 			}
-
 		}
 
 		return array;
