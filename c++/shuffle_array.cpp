@@ -6,45 +6,34 @@ using namespace std;
 class Solution
 {
 	public:
-		void shuffle(vector<int>& nums, int n)
+		void shuffle(vector<int>& nums)
 		{
-			vector<int> x;
-			vector<int> y;
+			vector<int> other;
 
-			int temp;
-
-			for(int i = 0; i < n; i++)
+			for(int i = 0; i < nums.size() / 2 ; i++)
 			{
-				temp = nums[i];
-				x.push_back(i);
+
+				other.push_back(nums[i]);
+				other.push_back(nums[i + 3] );
 			}
 
-			for(int x = nums.size() - 1; x >= n; x--)
+			for(int b = 0; b < other.size(); b++)
 			{
-				temp = nums[x];
-				y.push_back(x);
-			}	
+				if(b != 0)
+				{
+					cout << ", ";
+				}
 
-			for(in b = 0; b < n * 2; b++)
-			{
-
+				cout << other[b];
 			}
-
 		}	
 };
 
 int main()
 {
-	Solution obj;
+	vector<int> v { 2, 5, 1, 3, 4, 7};
 
-	vector<int> nums;
+	Solution caller;
 
-	int n = 3;
-
-	for(int i = 0; i < 6; i++)
-	{
-		nums.push_back(i);
-	}
-
-	obj.shuffle(nums, n);
+	caller.shuffle(v);
 }
