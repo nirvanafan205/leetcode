@@ -21,32 +21,54 @@ struct node* newNode(int data)
 	return (node);
 }
 
-void inOrder(struct node* temp, int sum);
+void inOrder(struct node* temp, int max, int min);
+int checking(int num, int max, int min);
 
 int main()
 {
+	int L = 420;
+	int H = 777;
+
 	struct node* root = newNode(69);
-	int amount = 0;
 
 	root->left = newNode(420);
 	root->right = newNode(777);
 	root->left->left = newNode(21);
-	
-	inOrder(root, amount);
 
-	printf("%d ", amount);
+	inOrder(root, H, L);
 }
 
-void inOrder(struct node* temp, int sum)
+void inOrder(struct node* temp, int max, int min)
 {
-	if(temp == NULL)
+	int sum = 0;
+	int sum_ = 0;
+
+	if(temp)
 	{
-		return;
+		inOrder(temp->left, max, min);
+		int check = temp->data;
+		sum = sum + checking(check, max, min);
+		printf("firts");
+		printf("%d ", sum);
+
+
+		inOrder(temp->right, max, min);
+		int check_ = temp->data;
+		sum_ = sum_ + checking(check_, max, min);
+		printf("second");
+		printf("%d ", sum_);
+	}
+}
+
+int checking(int num, int max, int min)
+{
+	if(num >= min && num <= max)
+	{
+		return num;
 	}
 
-	inOrder(temp->left, sum);
-	printf("%d " , temp->data);
-	sum += temp->data;
-	printf("%d " , sum);
-	inOrder(temp->right, sum);
+	else 
+	{
+		return 0;
+	}
 }
