@@ -2,6 +2,9 @@ import java.util.HashMap;
 import java.io.*;
 import java.util.*;
 
+//use two arrays
+//sort those two arrays
+//compare those two arrays
 public class validAnagram
 {
 	public void isAnagram(String s, String t)
