@@ -4,7 +4,7 @@ public class twoSum
 	{
 		for(int i = 0; i < nums.length; i++)
 		{
-			for(int j = i; j > nums.length; j++)
+			for(int j = i + 1 ; j < nums.length; j++)
 			{
 				if(nums[i] + nums[j] == target)
 				{
@@ -13,7 +13,7 @@ public class twoSum
 			}
 		}
 
-		throw new IllegalArgumentException("no match found");
+		throw new AssertionError();
 	}
 
 	public static void main(String[] args)
@@ -22,5 +22,7 @@ public class twoSum
 		int target = 9;
 
 		twoSum obj = new twoSum();
+
+		obj.twoSum(nums, target);
 	}
 }
