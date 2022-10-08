@@ -123,6 +123,17 @@ public class validAnagram
 
 			b += 1;
 		}
+
+		for(int a = 0; a < t.length; a++)
+		{
+			if(t[a] != s[a])
+			{
+				System.out.println("bababooy");
+				break;
+			}
+
+			System.out.println("Ayylmao");
+		}	
 	}
 
 	public static void main(String[] args)
